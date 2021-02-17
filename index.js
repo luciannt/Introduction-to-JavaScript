@@ -147,21 +147,22 @@ function game(user, computer) {
   const win = "you win!";
   const lose = "you lose!";
 
-  if (computer < 0.3) computer = "Paper";
-  if (computer < 0.6 && computer > 0.3) computer = "Rock";
-  if (computer > 0.6) computer = "Scissors";
+  if (computer < 0.3) computer = "paper";
+  if (computer < 0.6 && computer > 0.3) computer = "rock";
+  if (computer > 0.6) computer = "scissors";
 
-  if (user === "Paper" && computer === "Paper") return tie;
-  else if (user === "Paper" && computer === "Scissors") return lose;
-  else if (user === "Rock" && computer === "Rock") return tie;
-  else if (user === "Rock" && computer === "Paper") return lose;
-  else if (user === "Rock" && computer === "Scissors") return win;
-  else if (user === "Scissors" && computer === "Scissors") return tie;
-  else if (user === "Scissors" && computer === "Rock") return lose;
-  else if (user === "Scissors" && computer === "Paper") return win;
+  if (user === "paper" && computer === "paper") return tie;
+  else if (user === "paper" && computer === "scissors") return lose;
+  else if (user === "paper" && computer === "rock") return win;
+  else if (user === "rock" && computer === "rock") return tie;
+  else if (user === "rock" && computer === "paper") return lose;
+  else if (user === "rock" && computer === "scissors") return win;
+  else if (user === "scissors" && computer === "scissors") return tie;
+  else if (user === "scissors" && computer === "rock") return lose;
+  else if (user === "scissors" && computer === "paper") return win;
 }
 
-console.log(game("Paper", computerMove));
+console.log(game("paper", computerMove));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -170,12 +171,12 @@ console.log(game("Paper", computerMove));
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
+  2. Convert the number of kilometers received to miles
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/) {
-  /*add your code here*/
+function miles(kilometers) {
+  return 0.621371 * kilometers;
 }
 
 //Task 5b - Feet to CM
@@ -186,8 +187,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/) {
-  /*add your code here*/
+function feet(cm) {
+  return cm / 30.48;
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -200,8 +201,10 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/) {
-  /*add your code here*/
+function annoyingSong(startingNum) {
+  return `${startingNum} bottles of soda on the wall, ${startingNum} bottles of soda, take one down pass it around ${
+    startingNum - 1
+  } bottles of soda on the wall`;
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -219,8 +222,12 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
 
-function grade(/*Your Code here */) {
-  /*Your Code here */
+function grade(score) {
+  if (score >= 90 && score <= 100) return "you got an A";
+  if (score >= 80 && score <= 89) return "you got a B";
+  if (score >= 70 && score <= 79) return "you got a C";
+  if (score >= 60 && score <= 69) return "you got a D";
+  if (score < 60) return "you got an F";
 }
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
